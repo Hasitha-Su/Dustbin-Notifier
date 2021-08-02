@@ -1,7 +1,5 @@
 #mongo url
-app.properties.ts
-
-
+/*.env
 
 # compiled output
 /dist
