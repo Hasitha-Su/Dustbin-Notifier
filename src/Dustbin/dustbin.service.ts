@@ -2,10 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateDustbinDto } from './dto/create-Dustbin.dto';
-import { UpdateDustbinStatDto } from './dto/update-Dustbin-stat.dto';
-import { UpdateDustbinDto } from './dto/update-Dustbin.dto';
 import { Dustbin, DustbinDocument } from './entities/dustbin.entity';
-import {getConnection} from "typeorm";
 
 @Injectable()
 export class DustbinService {
