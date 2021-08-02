@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, Put } from '@nestjs/common';
 import { DustbinService } from './dustbin.service';
-import { CreateDustbinDto } from './dto/create-Dustbin.dto';
-import { UpdateDustbinDto } from './dto/update-Dustbin.dto';
+import { CreateDustbinDto } from './dto/create-dustbin.dto';
+import { UpdateDustbinDto } from './dto/update-dustbin.dto';
 
 @Controller('dustbin')
 export class DustbinController {
