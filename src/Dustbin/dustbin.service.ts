@@ -43,8 +43,8 @@ export class DustbinService {
     client.messages
       .create({
         body: 'Hello from Node',
-        to: '+12345678901', // Text this number
-        from: '+12345678901', // From a valid Twilio number
+        to: '+94716935597',
+        from: 'E-Dustbin Service',
       })
       .then((message) => console.log(message.sid));
 
