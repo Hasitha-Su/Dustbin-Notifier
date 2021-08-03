@@ -40,8 +40,8 @@ export class DustbinService {
 
     client.messages
       .create({
-        body: 'Hello from Node',
-        to: '0716935597', // Text this number
+        body: `${dustbin.name} in address "${dustbin.location}" is full.`,
+        to: '+94772779234', // Text this number
         from: '+18564854537', // From a valid Twilio number
       })
       .then((message) => console.log(message));
