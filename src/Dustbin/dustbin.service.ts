@@ -30,7 +30,7 @@ export class DustbinService {
 
   async updateStatus(id) {
     const dustbin = await this.DustbinModel.findById(id).exec();
-    console.log(dustbin)
+    // console.log(dustbin)
     dustbin.status = "FULL"
     console.log(dustbin)
 
@@ -46,7 +46,7 @@ export class DustbinService {
         to: '+94716935597', // Text this number
         from: '+18564854537', // From a valid Twilio number
       })
-      .then((message) => console.log(message.sid));
+      .then((message) => console.log(message));
 
 
     return await dustbin.save();
