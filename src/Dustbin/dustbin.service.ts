@@ -3,7 +3,11 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateDustbinDto } from './dto/create-dustbin.dto';
 import { Dustbin, DustbinDocument } from './entities/dustbin.entity';
+
+const accountSid = process.env.TWILLO_ACC_NUM; // Your Account SID from www.twilio.com/console
+const authToken = process.env.TWILLO_AUTH_TOKEN; // Your Auth Token from www.twilio.com/console
 const twilio = require('twilio');
+const client = new twilio(accountSid, authToken);
 
 @Injectable()
 export class DustbinService {
@@ -34,20 +38,13 @@ export class DustbinService {
     dustbin.status = "FULL"
     console.log(dustbin)
 
-    const accountSid = process.env.TWILLO_ACC_NUM; // Your Account SID from www.twilio.com/console
-    const authToken = process.env.TWILLO_AUTH_TOKEN; // Your Auth Token from www.twilio.com/console
-
-    const twilio = require('twilio');
-    const client = new twilio(accountSid, authToken);
-
     client.messages
       .create({
         body: 'Hello from Node',
-        to: '+94716935597', // Text this number
+        to: '0716935597', // Text this number
         from: '+18564854537', // From a valid Twilio number
       })
       .then((message) => console.log(message));
-
 
     return await dustbin.save();
   }
